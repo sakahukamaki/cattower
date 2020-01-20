@@ -3,6 +3,20 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <title>A3 リンクスキル判定</title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:title" content="A3! リンクスキルチェッカー" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sakahukamaki.github.io/cattower/tools/a3-linkskills.html" />
+  <meta property="og:image" content="https://sakahukamaki.github.io/cattower/images/a3-image.jpeg" />
+  <meta property="og:site_name" content="A3! リンクスキルチェッカー" />
+  <meta property="og:description" content="当サイトは個人が運営する、非公式サイトです。ゲーム「A3!」における【リンクスキル】をキャラクターごとに絞り込むことができます。" />
+  <meta name="twitter:card" content="summary" />
+
 </head>
 <style type="text/css">
   html {
@@ -22,7 +36,7 @@
     height: 2rem;
     min-width: 2rem;
     line-height: 2rem;
-    font-size: 14px;
+    font-size: 0.8rem;
     text-align: center;
     margin: 2px;
   }
@@ -32,7 +46,7 @@
   label.type {
     color: white;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 0.8rem;
     height: 2rem;
     width: 100%;
     line-height: 2rem;
@@ -42,6 +56,46 @@
   }
   .type input {
     display: none;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px #bbb solid;
+    text-align: left;
+    padding: 0.2rem;
+  }
+  th {
+    color: white;
+  }
+  th.co {
+    background: orange;
+    opacity: 0.8;
+  }
+  th.se {
+    background: blue;
+    opacity: 0.8;
+  }
+  th.ac {
+    background: red;
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 500px) {
+    #linkskills {
+      flex: 1;
+    }
+    table {
+      width: 100%;
+    }
+    tr {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    p, th, td {
+      font-size: 0.8rem;
+    }
   }
   .type.co {
     opacity: 0.5;
@@ -108,21 +162,13 @@
     opacity: 1;
     background: gray;
   }
-  .co {
-    color: orange;
-  }
-  .se {
-    color: blue;
-  }
-  .ac {
-    color: red;
-   }
 </style>
 
 
 <body>
-  <h1>A3! リンクスキルサーチ</h1>
+  <h1><image src="https://sakahukamaki.github.io/cattower/images/a3-image.jpeg"></h1>
   <p>当サイトは個人が運営する、非公式サイトです。<br>
+    ゲーム「A3!」における【リンクスキル】をキャラクターごとに絞り込むことができます。<br>
     趣味で必要になったため作成しているに過ぎず、運営、保守を続ける保証はありません。<br>
   リンクスキルの追加、間違い等ありましたら(sakahukamaki@gmail.com)までお問い合わせください。反映のお約束はできませんが、承ります。</p>
   <div class="result">
@@ -157,7 +203,7 @@
           <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="itaru">至
         </label>
         <label class="charactor spring" v-bind:class="{ checked: checkedCharactors.includes('shitoron') }">
-          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="shitoron"><span style="font-size: 12px">シトロン</span>
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="shitoron"><span style="font-size: 0.7rem">シトロン</span>
         </label>
         <label class="charactor spring" v-bind:class="{ checked: checkedCharactors.includes('chikage') }">
           <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="chikage">千景
@@ -239,8 +285,6 @@
     </div>
 
     <div id="linkskills">
-      <br>
-
       <table>
         <tr v-for="skill in filterdSkills">
           <th v-bind:class="skill.type">{{ skill.name }}({{ skill.up_val }}%up)</th><td>{{ skill.need_char}} </td>
