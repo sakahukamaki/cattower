@@ -22,8 +22,13 @@
   html {
     font-size: 16px;
   }
-  .result {
+  .description, .result {
     display: flex;
+  }
+  .logo {
+    margin-right: 1rem;
+    width: 150px;
+    height: 150px;
   }
   #members .unit{
     display: flex;
@@ -60,6 +65,7 @@
 
   table {
     border-collapse: collapse;
+    min-width: 60vw;
   }
   th, td {
     border: 1px #bbb solid;
@@ -83,6 +89,11 @@
   }
 
   @media screen and (max-width: 500px) {
+    .logo {
+      margin-right: 1rem;
+      width: 100px;
+      height: 100px;
+    }
     #linkskills {
       flex: 1;
     }
@@ -166,11 +177,13 @@
 
 
 <body>
-  <h1><image src="https://sakahukamaki.github.io/cattower/images/a3-image.jpg"></h1>
-  <p>当サイトは個人が運営する、非公式サイトです。<br>
-    ゲーム「A3!」における【リンクスキル】をキャラクターごとに絞り込むことができます。<br>
-    趣味で必要になったため作成しているに過ぎず、運営、保守を続ける保証はありません。<br>
-  リンクスキルの追加、間違い等ありましたら(sakahukamaki@gmail.com)までお問い合わせください。反映のお約束はできませんが、承ります。</p>
+  <div class="description">
+    <h1><image class="logo" alt="A3! リンクスキルチェッカー" src="https://sakahukamaki.github.io/cattower/images/a3-image.jpg"></h1>
+    <p>当サイトは個人が運営する、非公式サイトです。<br>
+      ゲーム「A3!」における【リンクスキル】をキャラクターごとに絞り込むことができます。<br>
+      趣味で必要になったため作成しているに過ぎず、運営、保守を続ける保証はありません。<br>
+    リンクスキルの追加、間違い等ありましたら(sakahukamaki@gmail.com)までお問い合わせください。反映のお約束はできませんが、承ります。</p>
+  </div>
   <div class="result">
     <div id="members">
       <div class="unit">
@@ -287,7 +300,7 @@
     <div id="linkskills">
       <table>
         <tr v-for="skill in filterdSkills">
-          <th v-bind:class="skill.type">{{ skill.name }}({{ skill.up_val }}%up)</th><td>{{ skill.need_char}} </td>
+          <th v-bind:class="skill.type">{{ skill.name }}</th><td>{{ skill.up_val }}%up</td><td>{{ skill.need_char}} </td>
         </tr>
       </table>
     </div>
