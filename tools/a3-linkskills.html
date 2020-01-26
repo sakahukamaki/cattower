@@ -302,7 +302,7 @@
     <div id="linkskills">
       <table>
         <tr v-for="skill in filterdSkills">
-          <th v-bind:class="skill.type">{{ skill.name }}</th><td>{{ skill.up_val }}%up</td><td>{{ skill.need_char}} </td>
+          <th v-bind:class="skill.type">{{ skill.name }}({{ skill.up_val }}%up)</th><td>{{ skill.need_char}} </td>
         </tr>
       </table>
     </div>
