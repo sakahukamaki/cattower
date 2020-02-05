@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'dartsfont';
+  src: url('./dartsfont.eot') format('eot'), url('./dartsfont.woff') format('woff');
+}
+
+html {
+  font-size: 16px;
+  background: gray;
+
+  font-family: "sawarabi", serif;
+}
+.header {
+  background: #FF7C7C;
+  padding: 0 10vw;
+  margin-bottom: 2rem
+}
+.page-title {
+  font-family: "hannari", serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: 1rem;
+
+  padding: 0;
+  margin: 0;
+  padding-left: 2rem;
+}
+.nav ul {
+  display: flex; /* row, flex-start*/
+  padding: 0;
+  margin: 0;
+}
+
+.brown-label {
+  background: #303030;
+  padding: .5rem 1rem .5rem 2rem;
+  margin: 1rem;
+  color: white;
+}
+.brown-label a {
+  color: white;
+  text-decoration: none;
+
+  font-family: "dartsfont", serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+h2.brown-label {
+  font-size: 1rem;
+  color: white;
+  display: inline;
+  margin-bottom: 1rem;
+  padding: .8rem 1rem .8rem 2rem;
+
+  font-family: "dartsfont", serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+li.brown-label {
+  list-style: none;
+}
+.description {
+  background: white;
+  flex-grow: 1;
+  min-width: 35vw;
+  min-height: 10rem;
+  margin-bottom: 2rem;
+}
+
+.description + .description {
+  margin-left: 2rem;
+}
+
+.description p {
+  padding: .5rem 2rem;
+  margin: .5rem 0;
+}
+.description h3 {
+  padding: .5rem 2rem 0;
+  margin: 0;
+}
+
+#about.description {
+  flex-grow: 2;
+  min-width: 80vw;
+}
+#about .flier {
+  border: 1px solid #ddd;
+  width: 20vw;
+}
+#about .with-image {
+  display: flex;
+}
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding: 0 10vw;
+}
+.book-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-family: "hannari", serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+.sub-title {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-family: "hannari", serif;
+  font-weight: bold;
+}
+.book-description {
+  margin: 2rem 0;
+  display: block;
+}
