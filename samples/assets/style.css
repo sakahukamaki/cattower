@@ -1,19 +1,36 @@
 @font-face {
   font-family: 'dartsfont';
   src: url('./dartsfont.eot') format('eot'), url('./dartsfont.woff') format('woff');
+}@font-face {
+  font-family: 'hannari';
+  src: url('./hannari.woff') format('woff');
 }
 
 html {
   font-size: 16px;
   background: url("./bg.png") repeat;
 
-  font-family: "Sawarabi Mincho", serif;
+  font-family: serif;
+  overflow-x: hidden;
 }
 .header {
   background: #FF7C7C;
   padding: 0 10vw;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
+.footer {
+  background: #FF7C7C;
+  text-align: center;
+  color: white;
+  padding: .5rem;
+}
+/*ナビゲーション*/
+.nav ul {
+  display: flex; /* row, flex-start*/
+  padding: 0;
+  margin: 0;
+}
+/*タイトル系*/
 .page-title {
   font-family: "hannari", serif;
   font-weight: bold;
@@ -24,80 +41,6 @@ html {
   margin: 0;
   padding-top: 1rem;
   padding-left: 2rem;
-}
-.nav ul {
-  display: flex; /* row, flex-start*/
-  padding: 0;
-  margin: 0;
-}
-
-.brown-label {
-  background: #303030;
-  padding: .5rem 1rem .5rem 2rem;
-  margin: 1rem;
-  color: white;
-  background-image: url(./hline.png);
-  background-repeat: no-repeat;
-}
-.brown-label a {
-  color: white;
-  text-decoration: none;
-
-  font-family: "dartsfont", serif;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-h2.brown-label {
-  font-size: 1rem;
-  color: white;
-  display: inline;
-  margin-bottom: 1rem;
-  padding: .8rem 1rem .8rem 2rem;
-
-  font-family: "dartsfont", serif;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-li.brown-label {
-  list-style: none;
-}
-.description {
-  background: white;
-  flex-grow: 1;
-  min-width: 35vw;
-  min-height: 10rem;
-  margin-bottom: 2rem;
-}
-
-.description + .description {
-  margin-left: 2rem;
-}
-
-.description p {
-  padding: .5rem 2rem;
-  margin: .5rem 0;
-}
-.description h3 {
-  padding: .5rem 2rem 0;
-  margin: 0;
-}
-
-#about.description {
-  flex-grow: 2;
-  min-width: 80vw;
-}
-#about .flier {
-  border: 1px solid #ddd;
-  width: 20vw;
-}
-#about .with-image {
-  display: flex;
-}
-.sections {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
-  padding: 0 10vw;
 }
 .book-title {
   font-size: 2rem;
@@ -114,14 +57,148 @@ li.brown-label {
   font-family: "hannari", serif;
   font-weight: bold;
 }
-.book-description {
+/*メニューラベル*/
+.brown-label {
+  background: #303030;
+  background-image: url(./hline.png);
+  background-repeat: no-repeat;
+
+  padding: .5rem 1rem .5rem 2rem;
+  margin: 1rem;
+  color: white;
+}
+.brown-label a {
+  color: white;
+  text-decoration: none;
+
+  font-family: "dartsfont", serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+h2.brown-label {
+  color: white;
+
+  display: inline;
+  margin-bottom: 1rem;
+  padding: .8rem 1rem .8rem 2rem;
+
+  font-size: 1rem;
+  font-family: "dartsfont", serif;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+li.brown-label {
+  list-style: none;
+}
+
+/*本体要素*/
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  padding: 0 10vw;
+}
+.description {
+  background: white;
+  flex-grow: 1;
+  flex: 1;
+  min-width: 35vw;
+  min-height: 10rem;
+  margin-bottom: 2rem;
+}
+.description + .description {
+  margin-left: 2rem;
+}
+.description h3 {
+  padding: .5rem 2rem 0;
+  margin: 0;
+  font-family: "hannari" serif;
+}
+.description p {
+  padding: .5rem 2rem;
+  margin: .5rem 0;
+}
+.description .samples {
+  padding: .5rem 2rem;
+}
+.description .sample-words {
+}
+.description .sample-author {
+  margin-bottom: 1rem;
+  text-align: right;
+  font-style: italic;
+}
+
+#about.description {
+  flex-grow: 2;
+  min-width: 80vw;
+}
+#about .flier {
+  border: 1px solid #ddd;
+  width: 20vw;
+}
+#about .with-image {
+  display: flex;
+}
+#about .book-description {
   margin: 2rem 0;
   display: block;
 }
 
-.footer {
-  background: #FF7C7C;
-  text-align: center;
-  color: white;
-  padding: .5rem;
+@media screen and (max-width: 835px) {
+  .sp.tablet li.brown-label {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+    background-repeat: repeat-y;
+  }
+
+  .sp .sections {
+    flex-direction: column;
+  }
+  .sp .description + .description {
+    margin-left: 0;
+  }
+  .sp.tablet #about .with-image p + p {
+    width: auto;
+  }
+
+  .sp.tablet .page-title {
+    font-family: "hannari", serif;
+    font-size: 2rem;
+  }
+  .sp.tablet .book-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .sp.tablet .sub-title {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
 }
+@media screen and (max-width: 880px) {
+  .tablet .book-title {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+  .tablet .sub-title {
+    letter-spacing: 1px;
+  }
+  .tablet #about .with-image p + p {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .tablet .book-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .tablet .sub-title {
+    letter-spacing: 2px;
+  }
+  .tablet #about .with-image p + p {
+    width: 500px;
+  }
+}
+
+
