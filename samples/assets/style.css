@@ -159,6 +159,8 @@ li.brown-label {
 
   .sp .sections {
     flex-direction: column;
+    width: 100vw;
+    padding: 0;
   }
   .sp .description + .description {
     margin-left: 0;
