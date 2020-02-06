@@ -147,6 +147,9 @@ li.brown-label {
 }
 
 @media screen and (max-width: 500px) {
+  body.sp {
+    margin: 0px;
+  }
   .sp.tablet li.brown-label {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
