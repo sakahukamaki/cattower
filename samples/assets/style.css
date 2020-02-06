@@ -117,6 +117,7 @@ li.brown-label {
 .description p {
   padding: .5rem 2rem;
   margin: .5rem 0;
+  width: auto;
 }
 .description .samples {
   padding: .5rem 2rem;
@@ -145,12 +146,52 @@ li.brown-label {
   display: block;
 }
 
-@media screen and (max-width: 835px) {
+@media screen and (max-width: 500px) {
   .sp.tablet li.brown-label {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
     background-repeat: repeat-y;
+    padding: .5rem;
+    padding-left: 1.2rem;
+    margin: .2rem;
+  }
+
+  .sp .sections {
+    flex-direction: column;
+  }
+  .sp .description + .description {
+    margin-left: 0;
+  }
+  .sp.tablet #about .with-image {
+    display: flex;
+    flex-direction: column;
+  }
+  .sp.tablet #about .flier {
+    width: 60vw;
+  }
+  .sp.tablet #about .with-image p + p {
+    width: auto;
+  }
+
+  .sp.tablet .page-title {
+    font-family: "hannari", serif;
+    font-size: 1.75rem;
+    padding: 1rem 0;
+    letter-spacing: 0;
+  }
+  .sp.tablet .book-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .sp.tablet .sub-title {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (max-width: 835px) {
+  .sp.tablet li.brown-label {
+    margin: .2rem;
   }
 
   .sp .sections {
