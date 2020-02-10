@@ -2,8 +2,7 @@
 <html>
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <title>A3 リンクスキルチェッカー</title>
-  <base target="_blank">
+  <title>A3 リンクスキル判定</title>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -175,6 +174,9 @@
     opacity: 1;
     background: gray;
   }
+  .underline {
+    background: linear-gradient(transparent 50%, #00e6b4 80%);
+  }
 </style>
 
 
@@ -302,7 +304,7 @@
     <div id="linkskills">
       <table>
         <tr v-for="skill in filterdSkills">
-          <th v-bind:class="skill.type">{{ skill.name }}({{ skill.up_val }}%up)</th><td>{{ skill.need_char}} </td>
+          <th v-bind:class="skill.type">{{ skill.name }}</th><td>{{ skill.up_val }}%up</td><td v-html="markup(skill.need_char)"></td>
         </tr>
       </table>
     </div>
@@ -567,7 +569,36 @@
             type: "se", charas: ["banri", "azami"],
             name: "リーダー＆ルーキー秋", up_val: 12, need_char: "万里、莇",
           },
-        ]
+        ],
+        charactors: {
+          sakuya: "咲也",
+          masumi: "真澄",
+          tsuduru: "綴",
+          itaru: "至",
+          shitoron: "シトロン",
+          chikage: "千景",
+          tenma: "天馬",
+          yuki: "幸",
+          muku: "椋",
+          misumi: "三角",
+          kazunari: "一成",
+          kumon: "九門",
+          banri: "万里",
+          juuza: "十座",
+          taichi: "太一",
+          omi: "臣",
+          sakyo: "左京",
+          azami: "莇",
+          tumugi: "紬",
+          tasuku: "丞",
+          hisoka: "密",
+          homare: "誉",
+          azuma: "東",
+          gai: "ガイ",
+          sakota: "迫田",
+          makita: "槙田",
+        },
+        separator: "、",
       },
       methods: {
         update: function(event) {
@@ -588,6 +619,26 @@
             }
           })
         },
+        markup: function(charas) {
+          if (v.checkedCharactors.length == 0) {
+            return charas
+          } else {
+            // 論理名
+            var str_names = v.checkedCharactors.map(function(key){return v.charactors[key] });
+            // 必要キャラリスト
+            var need_chars = charas.split(v.separator);
+            return need_chars.map(
+                               function(name) {
+                                 if (str_names.includes(name)) {
+                                   return "<span class='underline'>" + name + "</span>"
+                                 } else {
+                                   return name
+                                 }
+                               }
+                             )
+                             .join(v.separator)
+          }
+        }
       },
     })
   </script>
@@ -597,7 +648,7 @@
   <div class="thx">
     参考（敬称略）
     <ul>
-      <li>「A3！を効率的に攻略する」<a href="http://www.a3kouryaku.com/archives/5499592.html">リンクスキル一覧（簡易版）</a></li>
+      <li>「A3！を効率的に攻略する」<a href=http://www.a3kouryaku.com/archives/5499592.html">リンクスキル一覧（簡易版）</a></li>
     </ul>
   </div>
   <hr>
