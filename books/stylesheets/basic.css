@@ -1,0 +1,85 @@
+#novel-list {
+  background: #f3dca9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+header {
+  font-family: 'Sawarabi Mincho', serif;
+  font-size: 2rem;
+  text-align: center;
+}
+header p {
+  font-size: 1rem;
+}
+section.content {
+  flex: 1;
+  padding: 5px 0;
+  margin: 5px;
+  min-width: 18rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: white;
+}
+
+section.content .title {
+  padding: 5px;
+  margin-left: 5px;
+  font-weight: bold;
+  font-family: 'Hannari', serif;
+  font-size: 2rem;
+}
+section.content .tag {
+  padding: 5px;
+  margin-left: 10px;
+  font-family: 'Sawarabi Mincho', serif;
+  font-size: .8rem;
+}
+section.content .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  background: lightgray;
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+}
+
+section.content .cover img {
+  padding: 0.5rem;
+  max-width: 90%;
+  height: 20rem;
+}
+
+section.content div.link {
+  padding: 5px;
+  height: 4rem;
+  line-height: 4rem;
+}
+section.content div.link.soldout {
+  color: red;
+}
+section a {
+  padding: .5rem;
+  font-size: .8rem;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+}
+section a::hober, section a::visited {
+  color: white;
+}
+section a.buy {
+  background: #8d87eb;
+}
+section a.reopen {
+  background: #eb9e87;
+}
+
+section.content .etc {
+  padding: 5px;
+  font-family: "Sawarabi Mincho", serif;
+}
