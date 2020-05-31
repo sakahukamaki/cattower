@@ -1,6 +1,7 @@
 #novel-list {
   background: #f3dca9;
   display: flex;
+  align-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -19,7 +20,7 @@ section.content {
   flex: 1;
   padding: 5px 0;
   margin: 5px;
-  min-width: 18rem;
+  min-width: 20rem;
   border: 1px solid gray;
   border-radius: 10px;
   background: white;
