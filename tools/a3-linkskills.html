@@ -297,6 +297,24 @@
         <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('makita') }">
           <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="makita">槙田
         </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('haruto') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="haruto">晴翔
+        </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('shift') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="shift">志太
+        </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('kasumi') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="kasumi">霞
+        </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('hiro') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="hiro">紘
+        </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('zen') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="zen">善
+        </label>
+        <label class="charactor other" v-bind:class="{ checked: checkedCharactors.includes('syu') }">
+          <input type="checkbox" v-model="checkedCharactors" v-on:change="update" value="syu">柊
+        </label>
       </div>
 
     </div>
@@ -402,6 +420,10 @@
             name: "ルーキー＆リーダー春", up_val: 12, need_char: "咲也、千景",
           },
           {
+            type: "co", charas: ["tenma", "hiro"],
+            name: "歴代夏組リーダーズ", up_val: 12, need_char: "天馬、紘",
+          },
+          {
             type: "ac", charas: ["banri", "juuza", "taichi", "omi", "sakyo", "azami"],
             name: "新生秋組", up_val: 60, need_char: "万里、十座、太一、臣、左京、莇",
           },
@@ -420,6 +442,10 @@
           {
             type: "ac", charas: ["sakyo", "azami", "sakota", "makita"],
             name: "銀泉会", up_val: 36, need_char: "左京、莇、迫田、槙田",
+          },
+          {
+            type: "ac", charas: ["kasumi", "hiro", "zen", "syu"],
+            name: "初代リーダーズ", up_val: 36, need_char: "霞、紘、善、柊",
           },
           {
             type: "ac", charas: ["shitoron", "yuki", "tasuku"],
@@ -510,6 +536,10 @@
             name: "さんかく密輸し隊", up_val: 12, need_char: "三角、ガイ",
           },
           {
+            type: "ac", charas: ["banri", "zen"],
+            name: "歴代秋組リーダーズ", up_val: 12, need_char: "万里、善",
+          },
+          {
             type: "se", charas: ["sakuya", "masumi", "tsuduru", "itaru", "chikage", "shitoron"],
             name: "新生春組", up_val: 60, need_char: "咲也、真澄、綴、至、シトロン、千景",
           },
@@ -532,6 +562,10 @@
           {
             type: "se", charas: ["sakuya", "chikage", "hisoka", "azuma"],
             name: "天涯孤独", up_val: 36, need_char: "咲也、千景、密、東",
+          },
+          {
+            type: "se", charas: ["azami", "tasuku", "haruto", "shift"],
+            name: "GOD座コラボ公演組", up_val: 36, need_char: "莇、丞、晴翔、志太",
           },
           {
             type: "se", charas: ["tsuduru", "juuza", "omi"],
@@ -589,6 +623,14 @@
             type: "se", charas: ["banri", "azami"],
             name: "リーダー＆ルーキー秋", up_val: 12, need_char: "万里、莇",
           },
+          {
+            type: "se", charas: ["sakuya", "kasumi"],
+            name: "歴代春組リーダーズ", up_val: 12, need_char: "咲也、霞",
+          },
+          {
+            type: "se", charas: ["tumugi", "syu"],
+            name: "歴代冬組リーダーズ", up_val: 12, need_char: "紬、柊",
+          },
         ],
         charactors: {
           sakuya: "咲也",
@@ -617,6 +659,12 @@
           gai: "ガイ",
           sakota: "迫田",
           makita: "槙田",
+          haruto: "晴翔",
+          shift: "志太",
+          kasumi: "霞",
+          hiro: "紘",
+          zen: "善",
+          syu: "柊",
         },
         separator: "、",
       },
